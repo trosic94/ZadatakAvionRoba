@@ -33,6 +33,18 @@ public class Zadatak3IzmenaVrednosti {
             for (Roba j : roba)
                 System.out.println(j);
 
+            List<Roba> robaBrisanje = robaDao.queryForEq(Roba.POLJE_NAZIV,"Voda");
+
+            for (Roba j : robaBrisanje)
+            {
+                robaDao.delete(j);
+            }
+
+            roba = robaDao.queryForAll();
+            for (Roba j : roba)
+                System.out.println(j);
+
+
         }catch (Exception e) {
             e.printStackTrace();
         }finally {
