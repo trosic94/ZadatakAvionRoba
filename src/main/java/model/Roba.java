@@ -18,17 +18,20 @@ public class Roba {
     @DatabaseField(columnName = POLJE_NAZIV,canBeNull = false)
     private String naziv;
     @DatabaseField(columnName = POLJE_OPIS,canBeNull = false)
-    private int opis;
+    private String opis;
     @DatabaseField(columnName = POLJE_TEZINA,canBeNull = false)
     private double tezina;
 
     @DatabaseField(foreign = true, foreignAutoRefresh = true, canBeNull = false)
     private Avion avion;
 
-    public Roba(String naziv, int opis, double tezina) {
+
+
+    public Roba(String naziv, String opis, double tezina,Avion avion) {
         this.naziv = naziv;
         this.opis = opis;
         this.tezina = tezina;
+        this.avion = avion;
     }
     public Roba() {
     }
@@ -49,11 +52,11 @@ public class Roba {
         this.naziv = naziv;
     }
 
-    public int getOpis() {
+    public String getOpis() {
         return opis;
     }
 
-    public void setOpis(int opis) {
+    public void setOpis(String opis) {
         this.opis = opis;
     }
 

@@ -18,8 +18,10 @@ public class Avion {
     @DatabaseField(columnName = POLJE_RASPON_KRILA,canBeNull = false)
     private int rasponKrila;
 
-    @ForeignCollectionField(foreignFieldName = "roba")
+    @ForeignCollectionField(foreignFieldName = "avion")
     private ForeignCollection<Roba> roba;
+
+
 
 
     public Avion(String oznaka, int rasponKrila) {
